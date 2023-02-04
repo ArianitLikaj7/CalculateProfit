@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+  public static void main(String[] args) {
+    List<Product1> products = new ArrayList<>();
+
+    // Add some sample products
+    products.add(new Product1("Fanta",1, 2, 1));
+    products.add(new Product1("Pepsi",1, 1.5, 3));
+    products.add(new Product1("Go+",2, 3, 1));
+    products.add(new Product1("Chips",0.5, 1, 2));
+
+    // Calculate profit for each product
+    for (Product1 product : products) {
+      product.calculateProfit();
+    }
+
+    // Sort the products based on profit
+    Collections.sort(products);
+
+    // Print the products in decreasing order of profit
+    for (Product1 product : products) {
+      System.out.println(product);
+      System.out.println("Emri i produktit: "+ product.getName());
+      System.out.println("Cmimi qe blihet: " + product.getBuyPrice()+"$");
+      System.out.println("Cmimi qe e shesim: "+ product.getSellPrice()+"$");
+      System.out.println("Sasia qe e shesim: "+ product.getQuantity() + " cope");
+      System.out.println("Fitimi qe e kemi : "+ product.getProfit()+"$");
+      
+      System.out.println();
+    }
+  }
+
+}
+
